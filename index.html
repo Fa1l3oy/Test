@@ -11,7 +11,12 @@
   <!-- Navbar -->
   <nav class="bg-green-600 text-white">
     <div class="max-w-7xl mx-auto px-4 py-3 flex justify-between items-center">
-      <h1 class="text-xl font-bold">REG MAEJO-UNIVERSITY</h1>
+      <!-- โลโก้ + ชื่อระบบ -->
+      <div class="flex items-center space-x-3">
+        <img src="//upload.wikimedia.org/wikipedia/th/thumb/b/b7/MJU_LOGO.svg/250px-MJU_LOGO.svg.png"
+             class="w-10 h-10 object-contain bg-white rounded-full shadow" />
+        <h1 class="text-xl font-bold">REG MAEJO-UNIVERSITY</h1>
+      </div>
 
       <!-- Hamburger (Mobile only) -->
       <div class="md:hidden">
@@ -22,7 +27,7 @@
                 d="M4 6h16M4 12h16M4 18h16" />
             </svg>
           </summary>
-          <ul class="absolute right-0 mt-2 w-56 bg-white text-green-800 rounded-lg  z-10">
+          <ul class="absolute right-0 mt-2 w-56 bg-white text-green-800 rounded-lg shadow-lg z-10">
             <li><a href="#" class="block px-4 py-2 hover:bg-green-100">หน้าแรก</a></li>
             <li><a href="#" class="block px-4 py-2 hover:bg-green-100">ตารางการเรียน</a></li>
             <li><a href="#" class="block px-4 py-2 hover:bg-green-100">ตารางการใช้ห้องเรียน</a></li>
@@ -45,31 +50,57 @@
 
   <!-- Main Content -->
   <main class="max-w-7xl mx-auto p-6">
-    <section class="bg-yellow-100 rounded-xl p-6 shadow-sm mb-6">
+    <!-- Welcome Section -->
+    <section class="bg-yellow-100 rounded-xl p-6 shadow-sm mb-6 text-center">
       <h2 class="text-2xl font-semibold text-green-800 mb-2">ยินดีต้อนรับ</h2>
+      <p class="text-gray-700">เข้าสู่ระบบจัดการการเรียนของมหาวิทยาลัยแม่โจ้</p>
+    </section>
+
+    <!-- รูปภาพ 3 รูปเรียงกัน -->
+    <section class="text-center mb-10">
+      <div class="flex flex-col md:flex-row justify-center items-center gap-6">
+        <!-- รูปที่ 1 -->
+        <img 
+          src="images/image1.jpg" 
+          alt="รูปภาพที่ 1" 
+          class="rounded-xl shadow-md w-full max-w-xs"
+        />
+
+        <!-- รูปที่ 2 -->
+        <img 
+          src="6d8f67f1-14af-46ae-be34-35e2c259954f.png" 
+          alt="ภาพมหาวิทยาลัยแม่โจ้" 
+          class="rounded-xl shadow-md w-full max-w-xs"
+        />
+
+        <!-- รูปที่ 3 -->
+        <img 
+          src="images/image3.jpg" 
+          alt="รูปภาพที่ 3" 
+          class="rounded-xl shadow-md w-full max-w-xs"
+        />
+      </div>
+      <p class="text-sm text-gray-500 mt-2">ภาพประกอบ: มหาวิทยาลัยแม่โจ้</p>
+    </section>
+
+    <!-- ช่องทางติดต่อ -->
+    <section class="bg-gray-100 text-green-900 py-6 px-4 rounded-xl text-center">
+      <h2 class="text-lg font-bold mb-2">ช่องทางติดต่อ</h2>
+      <p>มหาวิทยาลัยแม่โจ้</p>
+      <p>เลขที่ 63 หมู่ 4 ตำบลหนองหาร อำเภอสันทราย จังหวัดเชียงใหม่ 50290</p>
+      <p>โทรศัพท์: 053-873000</p>
+      <p>อีเมล: info@maejo.ac.th</p>
+      <div class="mt-3 flex justify-center space-x-4">
+        <a href="https://www.mju.ac.th" target="_blank" class="text-green-600 hover:underline">
+          เว็บไซต์หลัก
+        </a>
+      </div>
     </section>
   </main>
 
   <!-- Footer -->
   <footer class="bg-green-600 text-white text-center py-3 mt-10">
     <p>&copy; 2025 ระบบจัดการการเรียน. สงวนลิขสิทธิ์</p>
-    <!-- ช่องทางติดต่อ -->
-<section class="bg-gray-100 text-green-900 py-6 px-4 text-center">
-  <h2 class="text-lg font-bold mb-2">ช่องทางติดต่อ</h2>
-  <p>มหาวิทยาลัยแม่โจ้</p>
-  <p>เลขที่ 63 หมู่ 4 ตำบลหนองหาร อำเภอสันทราย จังหวัดเชียงใหม่ 50290</p>
-  <p>โทรศัพท์: 053-873000</p>
-  <p>อีเมล: info@maejo.ac.th</p>
-  <div class="mt-3 flex justify-center space-x-4">
-    <a href="https://www.facebook.com/maejouniversity" target="_blank" class="text-blue-600 hover:underline">
-      Facebook
-    </a>
-    <a href="https://www.mju.ac.th" target="_blank" class="text-green-600 hover:underline">
-      เว็บไซต์หลัก
-    </a>
-  </div>
-</section>
-
   </footer>
 
 </body>
