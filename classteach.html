@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>รายวิชาที่สอน</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-green-50 text-green-900 min-h-screen">
+
+  <!-- แถบเมนูด้านบน -->
+  <nav class="bg-green-600 text-white">
+    <div class="max-w-7xl mx-auto px-4 py-3 flex justify-between items-center">
+      <div class="flex items-center space-x-3">
+        <img src="//upload.wikimedia.org/wikipedia/th/thumb/b/b7/MJU_LOGO.svg/250px-MJU_LOGO.svg.png"
+             class="w-10 h-10 object-contain bg-white rounded-full shadow" />
+        <h1 class="text-xl font-bold">REG MAEJO-UNIVERSITY</h1>
+      </div>
+      <div class="md:hidden">
+        <details class="relative">
+          <summary class="list-none cursor-pointer">
+            <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                d="M4 6h16M4 12h16M4 18h16" />
+            </svg>
+          </summary>
+          <ul class="absolute right-0 mt-2 w-56 bg-white text-green-800 rounded-lg shadow-lg z-10">
+            <li><a href="afterlogin.html" class="block px-4 py-2 hover:bg-green-100">เมนูสำหรับอาจารย์</a></li>
+          </ul>
+        </details>
+      </div>
+      <ul class="hidden md:flex space-x-4 text-sm md:text-base">
+        <li><a href="afterlogin.html" class="hover:text-yellow-300">เมนูสำหรับอาจารย์</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- ส่วนเนื้อหา -->
+  <div class="max-w-4xl mx-auto p-6">
+    <h2 class="text-2xl font-semibold mb-4 text-green-700">รายวิชาที่อาจารย์สอน</h2>
+
+    <table class="w-full bg-white shadow rounded">
+      <thead class="bg-green-200 text-left">
+        <tr>
+          <th class="py-2 px-4">รหัสวิชา</th>
+          <th class="py-2 px-4">ชื่อวิชา</th>
+          <th class="py-2 px-4">กลุ่มเรียน</th>
+          <th class="py-2 px-4">ห้อง</th>
+          <th class="py-2 px-4">วันที่สอน</th>
+          <th class="py-2 px-4">เวลาการสอน</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr class="border-t">
+          <td class="py-2 px-4">10301231</td>
+          <td class="py-2 px-4">เว็บเท็คโนโลยี</td>
+          <td class="py-2 px-4">1</td>
+          <td class="py-2 px-4">Lab คอม3-4</td>
+          <td class="py-2 px-4">จ. </td>
+          <td class="py-2 px-4">9:00-12:00</td>
+        </tr>
+        <tr class="border-t">
+          <td class="py-2 px-4">10301231</td>
+          <td class="py-2 px-4">เว็บเท็คโนโลยี</td>
+          <td class="py-2 px-4">1</td>
+          <td class="py-2 px-4">Lab คอม3-4</td>
+          <td class="py-2 px-4">อ. </td>
+          <td class="py-2 px-4">8:00-10:00</td>
+        </tr>
+        
+        <tr class="border-t bg-green-50">
+          <td class="py-2 px-4">10301223</td>
+          <td class="py-2 px-4">ทักษะชีวิต</td>
+          <td class="py-2 px-4">1</td>
+          <td class="py-2 px-4">Lab คอม3-4</td>
+          <td class="py-2 px-4">พฤ.</td>
+          <td class="py-2 px-4">13:00-15:00</td>
+        </tr>
+        <tr class="border-t bg-green-50">
+          <td class="py-2 px-4">10301223</td>
+          <td class="py-2 px-4">ทักษะชีวิต</td>
+          <td class="py-2 px-4">1</td>
+          <td class="py-2 px-4">Lab คอม3-4</td>
+          <td class="py-2 px-4">ศ.</td>
+          <td class="py-2 px-4">13:00-16:00</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- ปิดท้าย -->
+  <footer class="bg-green-600 text-white text-center py-3 mt-10">
+    <p>&copy; 2025 ระบบจัดการการเรียน. สงวนลิขสิทธิ์</p>
+  </footer>
+
+</body>
+</html>
