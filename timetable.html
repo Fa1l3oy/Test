@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ตารางเรียน - REG MAEJO-UNIVERSITY</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-white text-gray-800 font-sans">
+
+    <nav class="bg-green-600 text-white">
+        <div class="max-w-7xl mx-auto px-4 py-3 flex justify-between items-center">
+            <div class="flex items-center space-x-3">
+                <img src="//upload.wikimedia.org/wikipedia/th/thumb/b/b7/MJU_LOGO.svg/250px-MJU_LOGO.svg.png"
+                     class="w-10 h-10 object-contain bg-white rounded-full shadow" />
+                <h1 class="text-xl font-bold">REG MAEJO-UNIVERSITY</h1>
+            </div>
+
+            <div class="md:hidden">
+                <details class="relative">
+                    <summary class="list-none cursor-pointer">
+                        <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M4 6h16M4 12h16M4 18h16" />
+                        </svg>
+                    </summary>
+                    <ul class="absolute right-0 mt-2 w-56 bg-white text-green-800 rounded-lg shadow-lg z-10">
+                        <li><a href="index.html" class="block px-4 py-2 hover:bg-green-100">หน้าแรก</a></li>
+                        <li><a href="timetable.html" class="block px-4 py-2 hover:bg-green-100">ตารางการเรียน</a></li>
+                        <li><a href="classroom.html" class="block px-4 py-2 hover:bg-green-100">ตารางการใช้ห้องเรียน</a></li>
+                        <li><a href="Calendar.html" class="block px-4 py-2 hover:bg-green-100">ปฏิทินการศึกษา</a></li>
+                        <li><a href="teacher.html" class="block px-4 py-2 hover:bg-green-100">เมนูสำหรับอาจารย์</a></li>
+                    </ul>
+                </details>
+            </div>
+
+            <ul class="hidden md:flex space-x-4 text-sm md:text-base">
+                <li><a href="index.html" class="hover:text-yellow-300">หน้าแรก</a></li>
+                <li><a href="timetable.html" class="hover:text-yellow-300">ตารางการเรียน</a></li>
+                <li><a href="classroom.html" class="hover:text-yellow-300">ตารางการใช้ห้องเรียน</a></li>
+                <li><a href="Calendar.html" class="hover:text-yellow-300">ปฏิทินการศึกษา</a></li>
+                <li><a href="teacher.html" class="hover:text-yellow-300">เมนูสำหรับอาจารย์</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <main class="max-w-7xl mx-auto p-6">
+
+        <section class="bg-yellow-100 rounded-xl p-6 shadow-sm mb-6 max-w-md mx-auto">
+            <h2 class="text-2xl font-semibold text-green-800 mb-4 text-center">เข้าสู่ระบบนักศึกษา</h2>
+            <form id="studentForm" class="space-y-4">
+                <div>
+                    <label for="studentId" class="block font-medium text-gray-700 mb-1">รหัสนักศึกษา</label>
+                    <input type="text" id="studentId" name="studentId" placeholder="เช่น 65012345"
+                        class="w-full border border-gray-300 rounded-md p-2" required />
+                </div>
+                <button type="submit"
+                    class="w-full bg-green-600 text-white py-2 rounded-md hover:bg-green-700 transition">
+                    เข้าสู่ระบบ
+                </button>
+            </form>
+            <p id="errorMsg" class="text-red-600 mt-2 hidden text-center"></p>
+        </section>
+
+        <section id="timetableSection" class="hidden bg-white rounded-xl shadow-md p-4 md:p-6 mb-10 overflow-x-auto max-w-7xl mx-auto">
+            <button id="backBtn" class="mb-4 px-4 py-2 bg-gray-300 rounded hover:bg-gray-400">← กลับ</button>
+
+            <h2 class="text-xl font-semibold text-center text-green-800 mb-4">ตารางเรียน ภาคเรียนที่ 1/2568</h2>
+            <p class="text-center text-sm text-gray-500 mb-6">ระหว่างวันที่ 16/6/2568 - 22/6/2568</p>
+
+            <table class="min-w-full table-fixed border border-gray-300 text-sm">
+                <thead class="bg-green-50">
+                    <tr class="text-gray-700">
+                        <th class="border border-gray-300 p-2 w-24">วัน/เวลา</th>
+                        <th class="border border-gray-300 p-2">08:00 - 09:00</th>
+                        <th class="border border-gray-300 p-2">09:00 - 10:00</th>
+                        <th class="border border-gray-300 p-2">10:00 - 11:00</th>
+                        <th class="border border-gray-300 p-2">11:00 - 12:00</th>
+                        <th class="border border-gray-300 p-2">13:00 - 14:00</th>
+                        <th class="border border-gray-300 p-2">14:00 - 15:00</th>
+                        <th class="border border-gray-300 p-2">15:00 - 16:00</th>
+                        <th class="border border-gray-300 p-2">16:00 - 17:00</th>
+                    </tr>
+                </thead>
+                <tbody class="text-center">
+                    <tr>
+                        <td class="border border-gray-300 font-semibold bg-gray-50">จันทร์</td>
+                        <td class="border border-gray-300"></td>
+                        <td colspan="2" class="border border-gray-300 bg-blue-50">
+                            10301231<br>(3) L, Lab คอม3-4<br>105
+                        </td>
+                        <td class="border border-gray-300"></td>
+                        <td colspan="2" class="border border-gray-300 bg-blue-50">
+                            10301222<br>(3) L, Lab คอม3-4<br>105
+                        </td>
+                        <td colspan="2" class="border border-gray-300 bg-blue-50">
+                            10700313<br>(3) L, 80-401<br>147
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="border border-gray-300 font-semibold bg-gray-50">อังคาร</td>
+                        <td class="border border-gray-300"></td>
+                        <td colspan="2" class="border border-gray-300 bg-blue-50">
+                            10301231<br>(3) L, Lab คอม3-4<br>105
+                        </td>
+                        <td class="border border-gray-300"></td>
+                        <td colspan="2" class="border border-gray-300 bg-blue-50">
+                            10301225<br>(3) L, 3203
+                        </td>
+                        <td colspan="2" class="border border-gray-300 bg-blue-50">
+                            10301211<br>(3) L, 3203<br>141
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="border border-gray-300 font-semibold bg-gray-50">พุธ</td>
+                        <td class="border border-gray-300"></td>
+                        <td colspan="3" class="border border-gray-300 bg-blue-50">
+                            10301225<br>(3) L, 3203
+                        </td>
+                        <td colspan="3" class="border border-gray-300 bg-blue-50">
+                            10301222<br>(3) L, Lab คอม3-4<br>105
+                        </td>
+                        <td class="border border-gray-300"></td>
+                    </tr>
+                    <tr>
+                        <td class="border border-gray-300 font-semibold bg-gray-50">พฤหัสบดี</td>
+                        <td class="border border-gray-300"></td>
+                        <td colspan="3" class="border border-gray-300 bg-blue-50">
+                            10301211<br>(3) L, 3203<br>141
+                        </td>
+                        <td colspan="2" class="border border-gray-300 bg-blue-50">
+                            10301223<br>(3) L, Lab คอม3-4<br>105
+                        </td>
+                        <td colspan="2" class="border border-gray-300 bg-blue-50">
+                            10700313<br>(3) L, 80-401<br>147
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="border border-gray-300 font-semibold bg-gray-50">ศุกร์</td>
+                        <td class="border border-gray-300"></td>
+                        <td colspan="2" class="border border-gray-300 bg-blue-50">
+                            10301211<br>(3) L, 3203<br>141
+                        </td>
+                        <td colspan="6" class="border border-gray-300 text-gray-400 italic">ไม่มีเรียน</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <p class="text-xs text-gray-500 mt-4 text-center">
+                * ข้อมูลวิชา: รหัสวิชา (จำนวนหน่วยกิต) ประเภท, ห้องเรียน <br />
+                C = Lecture, L = Lab, R = ประชุม, S = Self Study, T = ติว
+            </p>
+        </section>
+
+    </main>
+
+<script>
+    const form = document.getElementById('studentForm');
+    const errorMsg = document.getElementById('errorMsg');
+    const timetableSection = document.getElementById('timetableSection');
+    const backBtn = document.getElementById('backBtn');
+
+    form.addEventListener('submit', e => {
+        e.preventDefault();
+
+        const studentId = form.studentId.value.trim();
+
+        if (!studentId) {
+            errorMsg.textContent = 'กรุณาใส่รหัสนักศึกษา';
+            errorMsg.classList.remove('hidden');
+            return;
+        }
+
+        // ซ่อนฟอร์มและแสดงตารางเรียน
+        form.closest('section').classList.add('hidden');
+        errorMsg.classList.add('hidden');
+        timetableSection.classList.remove('hidden');
+
+        // แสดงข้อความต้อนรับรหัสนักศึกษา (ถ้าต้องการ)
+        const welcomeMsg = document.createElement('p');
+        welcomeMsg.className = 'text-center text-green-700 font-semibold mb-4';
+        welcomeMsg.textContent = `ยินดีต้อนรับ รหัสนักศึกษา: ${studentId}`;
+        timetableSection.insertBefore(welcomeMsg, timetableSection.firstChild);
+    });
+
+    backBtn.addEventListener('click', () => {
+        // ซ่อนตารางเรียน
+        timetableSection.classList.add('hidden');
+
+        // เคลียร์ข้อความต้อนรับและข้อมูลในตาราง
+        const welcomeMsg = timetableSection.querySelector('p.text-center');
+        if (welcomeMsg) welcomeMsg.remove();
+
+        // แสดงฟอร์มกรอกรหัสนักศึกษา
+        form.closest('section').classList.remove('hidden');
+
+        // ล้างค่าใน input รหัสนักศึกษา
+        form.studentId.value = '';
+        errorMsg.classList.add('hidden');
+    });
+</script>
+
+</body>
+</html>
+
