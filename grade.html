@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>บันทึกเกรดรายบุคคล</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-white text-gray-800 font-sans">
+
+  <!-- Navbar -->
+  <nav class="bg-green-600 text-white">
+    <div class="max-w-7xl mx-auto px-4 py-3 flex justify-between items-center">
+      <div class="flex items-center space-x-3">
+        <img src="//upload.wikimedia.org/wikipedia/th/thumb/b/b7/MJU_LOGO.svg/250px-MJU_LOGO.svg.png"
+             class="w-10 h-10 object-contain bg-white rounded-full shadow" />
+        <h1 class="text-xl font-bold">REG MAEJO-UNIVERSITY</h1>
+      </div>
+      <div class="md:hidden">
+        <details class="relative">
+          <summary class="list-none cursor-pointer">
+            <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                d="M4 6h16M4 12h16M4 18h16" />
+            </svg>
+          </summary>
+          <ul class="absolute right-0 mt-2 w-56 bg-white text-green-800 rounded-lg shadow-lg z-10">
+            <li><a href="afterlogin.html" class="block px-4 py-2 hover:bg-green-100">เมนูสำหรับอาจารย์</a></li>
+          </ul>
+        </details>
+      </div>
+      <ul class="hidden md:flex space-x-4 text-sm md:text-base">
+        <li><a href="afterlogin.html" class="hover:text-yellow-300">เมนูสำหรับอาจารย์</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- Main Content -->
+  <main class="max-w-4xl mx-auto p-6">
+    <!-- หัวข้อ -->
+    <section class="bg-yellow-100 rounded-xl p-6 shadow-sm mb-6 text-center">
+      <h2 class="text-2xl font-semibold text-green-800 mb-2">บันทึกเกรดรายบุคคล</h2>
+      <p class="text-gray-700">กรอกคะแนนและดูผลเกรดด้านล่าง</p>
+    </section>
+
+    <!-- ฟอร์มบันทึกเกรด -->
+    <form id="gradeForm" class="bg-gray-50 p-6 rounded-xl shadow space-y-4">
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+        <div>
+          <label class="block text-sm font-medium mb-1">รหัสนักศึกษา</label>
+          <input type="text" id="studentId" placeholder="รหัสนักศึกษา" class="w-full border px-3 py-2 rounded" required />
+        </div>
+        <div>
+          <label class="block text-sm font-medium mb-1">ชื่อนักศึกษา</label>
+          <input type="text" id="studentName" placeholder="ชื่อ-นามสกุล" class="w-full border px-3 py-2 rounded" required />
+        </div>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+        <div>
+          <label class="block text-sm font-medium mb-1">คะแนนกลางภาค</label>
+          <input type="number" id="midterm" min="0" max="50" class="w-full border px-3 py-2 rounded" required />
+        </div>
+        <div>
+          <label class="block text-sm font-medium mb-1">คะแนนปลายภาค</label>
+          <input type="number" id="final" min="0" max="50" class="w-full border px-3 py-2 rounded" required />
+        </div>
+      </div>
+
+      <div class="text-center pt-4">
+        <button type="submit" class="bg-green-600 hover:bg-green-700 text-white font-bold px-6 py-2 rounded">
+          คำนวณเกรด
+        </button>
+      </div>
+    </form>
+
+
+    <!-- ตารางบันทึกผล -->
+    <section class="mt-10">
+      <h3 class="text-xl font-bold text-gray-800 mb-4">รายการบันทึกผล</h3>
+      <div class="overflow-x-auto">
+        <table class="min-w-full bg-white border border-gray-300 rounded-xl overflow-hidden">
+          <thead class="bg-green-600 text-white">
+            <tr>
+              <th class="px-4 py-2 border">รหัสนักศึกษา</th>
+              <th class="px-4 py-2 border">ชื่อนักศึกษา</th>
+              <th class="px-4 py-2 border">คะแนนกลางภาค</th>
+              <th class="px-4 py-2 border">คะแนนปลายภาค</th>
+              <th class="px-4 py-2 border">คะแนนรวม</th>
+              <th class="px-4 py-2 border">เกรด</th>
+            </tr>
+          </thead>
+          <tbody id="gradeTableBody">
+          </tbody>
+        </table>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="bg-green-600 text-white text-center py-3 mt-10">
+    <p>&copy; 2025 ระบบจัดการการเรียน. สงวนลิขสิทธิ์</p>
+  </footer>
+
+</body>
+</html>

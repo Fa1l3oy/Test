@@ -1,0 +1,464 @@
+<!DOCTYPE html>
+<html lang="th">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ตารางการใช้ห้องเรียน</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="bg-white text-gray-800 font-sans">
+
+    <!-- Navbar -->
+    <nav class="bg-green-600 text-white shadow-md">
+        <div class="max-w-7xl mx-auto px-4 py-3 flex justify-between items-center">
+            <div class="flex items-center space-x-3">
+                <img src="//upload.wikimedia.org/wikipedia/th/thumb/b/b7/MJU_LOGO.svg/250px-MJU_LOGO.svg.png"
+                    class="w-10 h-10 object-contain bg-white rounded-full shadow" />
+                <h1 class="text-xl font-bold">REG MAEJO-UNIVERSITY</h1>
+            </div>
+
+            <div class="md:hidden">
+                <details class="relative">
+                    <summary class="list-none cursor-pointer">
+                        <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M4 6h16M4 12h16M4 18h16" />
+                        </svg>
+                    </summary>
+                    <ul class="absolute right-0 mt-2 w-56 bg-white text-green-800 rounded-lg shadow-lg z-10">
+                        <li><a href="index.html" class="block px-4 py-2 hover:bg-green-100">หน้าแรก</a></li>
+                        <li><a href="timetable.html" class="block px-4 py-2 hover:bg-green-100">ตารางการเรียน</a></li>
+                        <li><a href="classroom.html" class="block px-4 py-2 hover:bg-green-100">ตารางการใช้ห้องเรียน</a>
+                        </li>
+                        <li><a href="Calendar.html" class="block px-4 py-2 hover:bg-green-100">ปฏิทินการศึกษา</a></li>
+                        <li><a href="teacher.html" class="block px-4 py-2 hover:bg-green-100">เมนูสำหรับอาจารย์</a></li>
+                    </ul>
+                </details>
+            </div>
+
+            <ul class="hidden md:flex space-x-6 text-sm md:text-base">
+                <li><a href="index.html" class="hover:text-yellow-300 transition">หน้าแรก</a></li>
+                <li><a href="timetable.html" class="hover:text-yellow-300 transition">ตารางการเรียน</a></li>
+                <li><a href="classroom.html" class="hover:text-yellow-300 transition">ตารางการใช้ห้องเรียน</a></li>
+                <li><a href="Calendar.html" class="hover:text-yellow-300 transition">ปฏิทินการศึกษา</a></li>
+                <li><a href="teacher.html" class="hover:text-yellow-300 transition">เมนูสำหรับอาจารย์</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="max-w-7xl mx-auto p-6">
+        <section class="bg-yellow-100 rounded-xl p-6 shadow mb-6 text-center">
+            <h2 class="text-2xl font-semibold text-green-800 mb-2">ตารางการใช้ห้องเรียน</h2>
+            <p class="text-gray-700">ตรวจสอบการใช้ห้องเรียนรายวัน - รายคาบ</p>
+        </section>
+
+        <section class="bg-white rounded-xl shadow-md p-6">
+            <div class="overflow-x-auto">
+                <!-- ควรนำข้อมูลตารางที่เหลือออกจาก HTML และใช้ JavaScript โหลดจาก JSON/CSV เพื่อความง่ายในการจัดการ -->
+                <!-- ตารางตัวอย่าง -->
+                <table class="min-w-full border border-gray-300 text-sm md:text-base rounded-lg overflow-hidden">
+                    <thead class="bg-green-600 text-white">
+                        <tr>
+                            <th class="py-2 px-4 border">ห้อง</th>
+                            <th class="py-2 px-4 border">	มหาวิทยาลัยแม่โจ้ เชียงใหม่</th>
+                        </tr>
+                    </thead>
+                    <tbody class="text-gray-800 divide-y divide-gray-200">
+                        <tr class="even:bg-gray-50 hover:bg-green-50">
+                            <th class="py-2 px-4 border font-semibold">000</th>
+                            <th class="py-2 px-4 border">ประกาศภายหลัง</th>
+                        </tr>
+                        <tr class="even:bg-gray-50 hover:bg-green-50">
+                            <th class="py-2 px-4 border font-semibold">101</th>
+                            <th class="py-2 px-4 border">อาคารพัฒนาวิศัยทัศน์</th>
+                        </tr>
+                        <tr class="even:bg-gray-50 hover:bg-green-50">
+                            <th class="py-2 px-4 border font-semibold">102</th>
+                            <th class="py-2 px-4 border">ประเสริฐ ณ นคร</th>
+                        </tr>
+                        <tr class="even:bg-gray-50 hover:bg-green-50">
+                            <th class="py-2 px-4 border font-semibold">103</th>
+                            <th class="py-2 px-4 border">สมิตตานนท์</th>
+                        </tr>
+                        <tr class="even:bg-gray-50 hover:bg-green-50">
+                            <th class="py-2 px-4 border font-semibold">104</th>
+                            <th class="py-2 px-4 border">คณะวิศวกรรมและอุตสาหกรรมเกษตร</th>
+                        </tr>
+                        <tr class="even:bg-gray-50 hover:bg-green-50">
+                            <th class="py-2 px-4 border font-semibold">105</th>
+                            <th class="py-2 px-4 border">คณะวิทยาศาสตร์</th>
+                        </tr>
+                        <tr class="even:bg-gray-50 hover:bg-green-50">
+                            <th class="py-2 px-4 border font-semibold">106</th>
+                            <th class="py-2 px-4 border">คณะเทคโนโลยีการประมงและทรัพยากรทางน้ำ</th>
+                        </tr>
+                        <tr class="even:bg-gray-50 hover:bg-green-50">
+                            <th class="py-2 px-4 border font-semibold">107</th>
+                            <th class="py-2 px-4 border">คณะบริหารธุรกิจ</th>
+                        </tr>
+                        <tr class="even:bg-gray-50 hover:bg-green-50">
+                            <th class="py-2 px-4 border font-semibold">108</th>
+                            <th class="py-2 px-4 border"> ภาควิชาทรัพยากรดินและสิ่งแวดล้อม</th>
+                        </tr>
+                        <tr class="even:bg-gray-50 hover:bg-green-50">
+                            <th class="py-2 px-4 border font-semibold">109</th>
+                            <th class="py-2 px-4 border"> อาคารเทคโนโลยีภูมิทัศน์</th>
+                        </tr>
+                        <tr class="even:bg-gray-50 hover:bg-green-50">
+                            <th class="py-2 px-4 border font-semibold">110</th>
+                            <th class="py-2 px-4 border">ศูนย์กีฬาเฉลิมพระเกียรติ (โซน B)</th>
+                        </tr>
+                        <tr class="even:bg-gray-50 hover:bg-green-50">
+                            <th class="py-2 px-4 border font-semibold">111</th>
+                            <th class="py-2 px-4 border">ศูนย์กล้วยไม้และไม้ดอกไม้ประดับ</th>
+                        </tr>
+                        <tr class="even:bg-gray-50 hover:bg-green-50">
+                            <th class="py-2 px-4 border font-semibold">112</th>
+                            <th class="py-2 px-4 border">คณะสัตวศาสตร์และเทคโนโลยี</th>
+                        </tr>
+                        <tr class="even:bg-gray-50 hover:bg-green-50">
+                            <th class="py-2 px-4 border font-semibold">113</th>
+                            <th class="py-2 px-4 border">อาคารกำจรบุญแปง</th>
+                        </tr>
+                        <tr class="even:bg-gray-50 hover:bg-green-50">
+                            <th class="py-2 px-4 border font-semibold">114</th>
+                            <th class="py-2 px-4 border">อาคารเมล็ดพันธุ์</th>
+                        </tr>
+                        <tr class="even:bg-gray-50 hover:bg-green-50">
+                            <th class="py-2 px-4 border font-semibold">115</th>
+                            <th class="py-2 px-4 border">อาคารไม้ผล</th>
+                        </tr>
+                        <tr class="even:bg-gray-50 hover:bg-green-50">
+                            <th class="py-2 px-4 border font-semibold">116</th>
+                            <th class="py-2 px-4 border">อาคารพืชผัก</th>
+                        </tr>
+                        <tr class="even:bg-gray-50 hover:bg-green-50">
+                            <th class="py-2 px-4 border font-semibold">117</th>
+                            <th class="py-2 px-4 border"> อาคารเนื้อเยื่อ</th>
+                        </tr>
+                        <tr class="even:bg-gray-50 hover:bg-green-50">
+                            <th class="py-2 px-4 border font-semibold">118</th>
+                            <th class="py-2 px-4 border"> ภาควิชา</th>
+                        </tr>
+                        <tr class="even:bg-gray-50 hover:bg-green-50">
+                            <th class="py-2 px-4 border font-semibold">119</th>
+                            <th class="py-2 px-4 border">TBA</th>
+                        </tr>
+                        <tr class="even:bg-gray-50 hover:bg-green-50">
+                            <th class="py-2 px-4 border font-semibold">120</th>
+                            <th class="py-2 px-4 border">ภาคพืชไร่</th>
+                        </tr>
+                        <tr class="even:bg-gray-50 hover:bg-green-50">
+                            <th class="py-2 px-4 border font-semibold">121</th>
+                            <th class="py-2 px-4 border">อาคารเทคโนโลยีชีวภาพ</th>
+                        </tr>
+                        <tr class="even:bg-gray-50 hover:bg-green-50">
+                            <th class="py-2 px-4 border font-semibold">122</th>
+                            <th class="py-2 px-4 border"> อาคาร 77</th>
+                        </tr>
+                        <tr class="even:bg-gray-50 hover:bg-green-50">
+                            <th class="py-2 px-4 border font-semibold">123</th>
+                            <th class="py-2 px-4 border">ภาควิชาพืชสวน</th>
+                        </tr>
+                        <tr class="even:bg-gray-50 hover:bg-green-50">
+                            <th class="py-2 px-4 border font-semibold">124</th>
+                            <th class="py-2 px-4 border">อาคารสุวรรณวาจกกิสิกิจ</th>
+                        </tr>
+                        <tr class="even:bg-gray-50 hover:bg-green-50">
+                            <th class="py-2 px-4 border font-semibold">125</th>
+                            <th class="py-2 px-4 border">อาคารแม่โจ้ 70 ปี : สร้างปัญญาเพื่อแผ่นดิน</th>
+                        </tr>
+                        <tr class="even:bg-gray-50 hover:bg-green-50">
+                            <th class="py-2 px-4 border font-semibold">126</th>
+                            <th class="py-2 px-4 border">อาคารปฏิบัติการรวมทางพืช</th>
+                        </tr>
+                        <tr class="even:bg-gray-50 hover:bg-green-50">
+                            <th class="py-2 px-4 border font-semibold">127</th>
+                            <th class="py-2 px-4 border">อาคารหม่อนไหม</th>
+                        </tr>
+                        <tr class="even:bg-gray-50 hover:bg-green-50">
+                            <th class="py-2 px-4 border font-semibold">128</th>
+                            <th class="py-2 px-4 border">ศูนย์วิจัยควบคุมศัตรูพืชโดยชีวินทรีย์ฯ</th>
+                        </tr>
+                        <tr class="even:bg-gray-50 hover:bg-green-50">
+                            <th class="py-2 px-4 border font-semibold">129</th>
+                            <th class="py-2 px-4 border">อาคารเฉลิมพระเกียรติสมเด็จพระเทพฯ</th>
+                        </tr>
+                        <tr class="even:bg-gray-50 hover:bg-green-50">
+                            <th class="py-2 px-4 border font-semibold">130</th>
+                            <th class="py-2 px-4 border">อาคารไม้ผล 2</th>
+                        </tr>
+                        <tr class="even:bg-gray-50 hover:bg-green-50">
+                            <th class="py-2 px-4 border font-semibold">140</th>
+                            <th class="py-2 px-4 border">อาคารเศรษฐศาสตร์</th>
+                        </tr>
+                        <tr class="even:bg-gray-50 hover:bg-green-50">
+                            <th class="py-2 px-4 border font-semibold">141</th>
+                            <th class="py-2 px-4 border">อาคารจุฬาภรณ์</th>
+                        </tr>
+                        <tr class="even:bg-gray-50 hover:bg-green-50">
+                            <th class="py-2 px-4 border font-semibold">142</th>
+                            <th class="py-2 px-4 border"> อาคารเทพ พงษ์พานิช</th>
+                        </tr>
+                        <tr class="even:bg-gray-50 hover:bg-green-50">
+                            <th class="py-2 px-4 border font-semibold">143</th>
+                            <th class="py-2 px-4 border">อาคาร 75 ปี (คณะสารสนเทศแลการสื่อสาร)</th>
+                        </tr>
+                        <tr class="even:bg-gray-50 hover:bg-green-50">
+                            <th class="py-2 px-4 border font-semibold">144</th>
+                            <th class="py-2 px-4 border">สระว่ายน้ำอุบุลรัตนราชกัญญา</th>
+                        </tr>
+                        <tr class="even:bg-gray-50 hover:bg-green-50">
+                            <th class="py-2 px-4 border font-semibold">145</th>
+                            <th class="py-2 px-4 border">วิทยาลัยพลังงานทดแทน</th>
+                        </tr>
+                        <tr class="even:bg-gray-50 hover:bg-green-50">
+                            <th class="py-2 px-4 border font-semibold">146</th>
+                            <th class="py-2 px-4 border"> อาคารเทอดกสิกร</th>
+                        </tr>
+                        <tr class="even:bg-gray-50 hover:bg-green-50">
+                            <th class="py-2 px-4 border font-semibold">147</th>
+                            <th class="py-2 px-4 border">อาคารเรียนรวม 80 ปี</th>
+                        </tr>
+                        <tr class="even:bg-gray-50 hover:bg-green-50">
+                            <th class="py-2 px-4 border font-semibold">148</th>
+                            <th class="py-2 px-4 border">อาคารเรียนรวมคณะสถาปัตยกรรมศาสตร์และการออกแบบสิ่งแวดล้อม</th>
+                        </tr>
+                        <tr class="even:bg-gray-50 hover:bg-green-50">
+                            <th class="py-2 px-4 border font-semibold">149</th>
+                            <th class="py-2 px-4 border">อาคารศูนย์ภาษา</th>
+                        </tr>
+                        <tr class="even:bg-gray-50 hover:bg-green-50">
+                            <th class="py-2 px-4 border font-semibold">150</th>
+                            <th class="py-2 px-4 border">อาคารพยาบาลศาสตร์</th>
+                        </tr>
+                        <tr class="even:bg-gray-50 hover:bg-green-50">
+                            <th class="py-2 px-4 border font-semibold">151</th>
+                            <th class="py-2 px-4 border">ศูนย์เรียนรู้เทคโนโลยีการควบคุมศัตรูพืชโดยชีววิธี
+                                (ฟาร์มมหาวิทยาลัย)</th>
+                        </tr>
+                        <tr class="even:bg-gray-50 hover:bg-green-50">
+                            <th class="py-2 px-4 border font-semibold">152</th>
+                            <th class="py-2 px-4 border">การเรียนการสอนแบบออนไลน์</th>
+                        </tr>
+                        <tr class="even:bg-gray-50 hover:bg-green-50">
+                            <th class="py-2 px-4 border font-semibold">153</th>
+                            <th class="py-2 px-4 border">อาคารเรียนรวมและปฏิบัติการ คณะสัตวแพทยศาสตร์</th>
+                        </tr>
+                        <tr class="even:bg-gray-50 hover:bg-green-50">
+                            <th class="py-2 px-4 border font-semibold">154</th>
+                            <th class="py-2 px-4 border">อาคารปฏิบัติการโรงพยาบาลสัตว์</th>
+                        </tr>
+
+
+                        <thead class="bg-green-600 text-white">
+                            <tr>
+                                <th class="py-2 px-4 border">ห้อง</th>
+                                <th class="py-2 px-4 border">	วิทยาเขต วิทยาลัยบริหารศาสตร์</th>
+                            </tr>
+                        </thead>
+                    <tbody class="text-gray-800 divide-y divide-gray-200">
+                        <tr class="even:bg-gray-50 hover:bg-green-50">
+                            <th class="py-2 px-4 border font-semibold">106</th>
+                            <th class="py-2 px-4 border">ภาควิชาเทคโนโลยีการประมง</th>
+                        </tr>
+                        <tr class="even:bg-gray-50 hover:bg-green-50">
+                            <th class="py-2 px-4 border font-semibold">107</th>
+                            <th class="py-2 px-4 border">คณะธุรกิจการเกษตร</th>
+                        </tr>
+                        <tr class="even:bg-gray-50 hover:bg-green-50">
+                            <th class="py-2 px-4 border font-semibold">112</th>
+                            <th class="py-2 px-4 border"> อาคารภาควิชาเทคโนโลยีทางสัตว์</th>
+                        </tr>
+
+
+                        <thead class="bg-green-600 text-white">
+                            <tr>
+                                <th class="py-2 px-4 border">ห้อง</th>
+                                <th class="py-2 px-4 border">	วิทยาเขต แพร่</th>
+                            </tr>
+                        </thead>
+                    <tbody class="text-gray-800 divide-y divide-gray-200">
+                        <tr class="even:bg-gray-50 hover:bg-green-50">
+                            <th class="py-2 px-4 border font-semibold">106</th>
+                            <th class="py-2 px-4 border">ภาควิชาเทคโนโลยีการประมง</th>
+                        </tr>
+                        <tr class="even:bg-gray-50 hover:bg-green-50">
+                            <th class="py-2 px-4 border font-semibold">107</th>
+                            <th class="py-2 px-4 border">คณะธุรกิจการเกษตร</th>
+                        </tr>
+                        <tr class="even:bg-gray-50 hover:bg-green-50">
+                            <th class="py-2 px-4 border font-semibold">112</th>
+                            <th class="py-2 px-4 border"> อาคารภาควิชาเทคโนโลยีทางสัตว์</th>
+                        </tr>
+
+                        <thead class="bg-green-600 text-white">
+                            <tr>
+                                <th class="py-2 px-4 border">ห้อง</th>
+                                <th class="py-2 px-4 border">	วิทยาเขต ชุมพร</th>
+                            </tr>
+                        </thead>
+                    <tbody class="text-gray-800 divide-y divide-gray-200">
+                        <tr class="even:bg-gray-50 hover:bg-green-50">
+                            <th class="py-2 px-4 border font-semibold">801</th>
+                            <th class="py-2 px-4 border">อาคารพลังแม่โจ้สามัคคี</th>
+                        </tr>
+                        <tr class="even:bg-gray-50 hover:bg-green-50">
+                            <th class="py-2 px-4 border font-semibold">802</th>
+                            <th class="py-2 px-4 border">อาคารนำชัย ทนุผล</th>
+                        </tr>
+                        <tr class="even:bg-gray-50 hover:bg-green-50">
+                            <th class="py-2 px-4 border font-semibold">803</th>
+                            <th class="py-2 px-4 border"> อาคารปฏิบัติการทางวิทยาศาสตร์และเทคโนโลยีอุตสาหกรรมเกษตร</th>
+                        </tr>
+                        <tr class="even:bg-gray-50 hover:bg-green-50">
+                            <th class="py-2 px-4 border font-semibold">804</th>
+                            <th class="py-2 px-4 border">อาคารนำร่องและอุตสาหกรรมฯ</th>
+                        </tr>
+                        <tr class="even:bg-gray-50 hover:bg-green-50">
+                            <th class="py-2 px-4 border font-semibold">805</th>
+                            <th class="py-2 px-4 border"> ฟาร์มเทคโนโลยีการผลิตสัตว์</th>
+                        </tr>
+                        <tr class="even:bg-gray-50 hover:bg-green-50">
+                            <th class="py-2 px-4 border font-semibold">806</th>
+                            <th class="py-2 px-4 border"> ฟาร์มเทคโนโลยีการผลิตพืช</th>
+                        </tr>
+                        <tr class="even:bg-gray-50 hover:bg-green-50">
+                            <th class="py-2 px-4 border font-semibold">807</th>
+                            <th class="py-2 px-4 border">ฟาร์มเกษตรป่าไม้</th>
+                        </tr>
+                        <tr class="even:bg-gray-50 hover:bg-green-50">
+                            <th class="py-2 px-4 border font-semibold">808</th>
+                            <th class="py-2 px-4 border">ศูนย์ประสานงาน</th>
+                        </tr>
+                        <tr class="even:bg-gray-50 hover:bg-green-50">
+                            <th class="py-2 px-4 border font-semibold">809</th>
+                            <th class="py-2 px-4 border">ฟาร์มสัตว์ปีก</th>
+                        </tr>
+                        <tr class="even:bg-gray-50 hover:bg-green-50">
+                            <th class="py-2 px-4 border font-semibold">810</th>
+                            <th class="py-2 px-4 border"> ฟาร์มสุกร</th>
+                        </tr>
+                        <tr class="even:bg-gray-50 hover:bg-green-50">
+                            <th class="py-2 px-4 border font-semibold">812</th>
+                            <th class="py-2 px-4 border"> อาคารเกษตรป่าไม้</th>
+                        </tr>
+                        <tr class="even:bg-gray-50 hover:bg-green-50">
+                            <th class="py-2 px-4 border font-semibold">813</th>
+                            <th class="py-2 px-4 border"> อาคารเทคโนโลยีการผลิตพืช</th>
+                        </tr>
+                        <tr class="even:bg-gray-50 hover:bg-green-50">
+                            <th class="py-2 px-4 border font-semibold">814</th>
+                            <th class="py-2 px-4 border"> อาคารเทคโนโลยีการผลิตสัตว์</th>
+                        </tr>
+                        <tr class="even:bg-gray-50 hover:bg-green-50">
+                            <th class="py-2 px-4 border font-semibold">815</th>
+                            <th class="py-2 px-4 border">อาคารศาสตร์พระราชา</th>
+                        </tr>
+                        <tr class="even:bg-gray-50 hover:bg-green-50">
+                            <th class="py-2 px-4 border font-semibold">816</th>
+                            <th class="py-2 px-4 border"> Shop เทคโนโลยีอุตสาหกรรมป่าไม้</th>
+                        </tr>
+                        <tr class="even:bg-gray-50 hover:bg-green-50">
+                            <th class="py-2 px-4 border font-semibold"> TBA</th>
+                            <th class="py-2 px-4 border"> TBA</th>
+                        </tr>
+                        <tr class="even:bg-gray-50 hover:bg-green-50">
+                            <th class="py-2 px-4 border font-semibold">สนามกีฬา</th>
+                            <th class="py-2 px-4 border"> สนามกีฬา</th>
+                        </tr>
+
+
+                        
+                            <thead class="bg-green-600 text-white">
+                                <tr>
+                                    <th class="py-2 px-4 border">ห้อง</th>
+                                    <th class="py-2 px-4 border">ชื่ออาคาร/หน่วยงาน</th>
+                                </tr>
+                            </thead>
+                            <tbody class="text-gray-800 divide-y divide-gray-200">
+                                <tr class="even:bg-gray-50 hover:bg-green-50">
+                                    <th class="py-2 px-4 border font-semibold">701</th>
+                                    <th class="py-2 px-4 border">อาคารบุญรอด ศุภอุดมฤกษ์</th>
+                                </tr>
+                                <tr class="even:bg-gray-50 hover:bg-green-50">
+                                    <th class="py-2 px-4 border font-semibold">702</th>
+                                    <th class="py-2 px-4 border">อาคารแม่โจ้สามัคคี</th>
+                                </tr>
+                                <tr class="even:bg-gray-50 hover:bg-green-50">
+                                    <th class="py-2 px-4 border font-semibold">703</th>
+                                    <th class="py-2 px-4 border"> โรงน้ำจืด</th>
+                                </tr>
+                                <tr class="even:bg-gray-50 hover:bg-green-50">
+                                    <th class="py-2 px-4 border font-semibold">704</th>
+                                    <th class="py-2 px-4 border"> โรงน้ำเค็ม</th>
+                                </tr>
+                                <tr class="even:bg-gray-50 hover:bg-green-50">
+                                    <th class="py-2 px-4 border font-semibold">705</th>
+                                    <th class="py-2 px-4 border"> แปลงดอกหน้าวัว</th>
+                                </tr>
+                                <tr class="even:bg-gray-50 hover:bg-green-50">
+                                    <th class="py-2 px-4 border font-semibold">706</th>
+                                    <th class="py-2 px-4 border"> สนามกีฬา</th>
+                                </tr>
+                                <tr class="even:bg-gray-50 hover:bg-green-50">
+                                    <th class="py-2 px-4 border font-semibold">707</th>
+                                    <th class="py-2 px-4 border"> นอกสถานที่</th>
+                                </tr>
+                                <tr class="even:bg-gray-50 hover:bg-green-50">
+                                    <th class="py-2 px-4 border font-semibold">708</th>
+                                    <th class="py-2 px-4 border">ฟาร์มเทคโนโลยีการผลิตพืช</th>
+                                </tr>
+                                <tr class="even:bg-gray-50 hover:bg-green-50">
+                                    <th class="py-2 px-4 border font-semibold">709</th>
+                                    <th class="py-2 px-4 border"> ฟาร์มการประมง(การเพาะเลี้ยงสัตว์น้ำ)</th>
+                                </tr>
+                                <tr class="even:bg-gray-50 hover:bg-green-50">
+                                    <th class="py-2 px-4 border font-semibold">710</th>
+                                    <th class="py-2 px-4 border"> แปลงพืชไร่</th>
+                                </tr>
+                                <tr class="even:bg-gray-50 hover:bg-green-50">
+                                    <th class="py-2 px-4 border font-semibold">711</th>
+                                    <th class="py-2 px-4 border"> นอกสถานที่</th>
+                                </tr>
+                                <tr class="even:bg-gray-50 hover:bg-green-50">
+                                    <th class="py-2 px-4 border font-semibold">712</th>
+                                    <th class="py-2 px-4 border">แปลงไม้ผล</th>
+                                </tr>
+                                <tr class="even:bg-gray-50 hover:bg-green-50">
+                                    <th class="py-2 px-4 border font-semibold">713</th>
+                                    <th class="py-2 px-4 border">อาคาร Cowboy</th>
+                                </tr>
+                                <tr class="even:bg-gray-50 hover:bg-green-50">
+                                    <th class="py-2 px-4 border font-semibold">714</th>
+                                    <th class="py-2 px-4 border"> โครงการศูนย์การศึกษาสัญจร</th>
+                                </tr>
+                                <tr class="even:bg-gray-50 hover:bg-green-50">
+                                    <th class="py-2 px-4 border font-semibold">715</th>
+                                    <th class="py-2 px-4 border">อาคาร Cowboy</th>
+                                </tr>
+                                <tr class="even:bg-gray-50 hover:bg-green-50">
+                                    <th class="py-2 px-4 border font-semibold">716</th>
+                                    <th class="py-2 px-4 border"> อาคารแม่โจ้ 80 ปี</th>
+                                </tr>
+                                <tr class="even:bg-gray-50 hover:bg-green-50">
+                                    <th class="py-2 px-4 border font-semibold">717</th>
+                                    <th class="py-2 px-4 border">อาคารปฏิบัติงานด้านวิทยาศาสตร์และเทคโนโลยี</th>
+                                </tr>
+
+                            </tbody>
+                        </table>
+            </div>
+        </section>
+    </main>
+
+    <footer class="bg-green-600 text-white text-center py-4 mt-10">
+        <p>&copy; 2025 ระบบจัดการการเรียน. สงวนลิขสิทธิ์</p>
+    </footer>
+
+</body>
+
+</html>
